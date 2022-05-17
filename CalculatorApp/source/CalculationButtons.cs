@@ -106,12 +106,11 @@ namespace CalculatorApp
         {
             if (inputTextBox.Text != "")
             {
-                string str = inputTextBox.Text;
-                Expression expression = new Expression(str);
-                if (manager.IsValidExpression(str) && expression.checkSyntax())
+                Expression expression = new Expression(inputTextBox.Text);
+                if (manager.IsValidExpression(inputTextBox.Text) && expression.checkSyntax())
                 {
                     manager.AddRequest(expression);
-                    messageLabel2.Text = expression.getCanonicalExpressionString();
+                    messageLabel2.Text = inputTextBox.Text;
                 }
                 inputTextBox.Text = "";
                 messageLabel.Text = "";
