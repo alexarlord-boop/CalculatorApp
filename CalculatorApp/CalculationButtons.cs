@@ -4,7 +4,7 @@ using org.mariuszgromada.math.mxparser;
 
 namespace CalculatorApp
 {
-    public partial class Form1: Form
+    public partial class Form1 : Form
     {
         private void ZeroButton_Click(object sender, EventArgs e)
         {
