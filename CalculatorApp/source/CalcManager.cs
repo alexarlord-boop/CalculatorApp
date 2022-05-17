@@ -106,9 +106,8 @@ namespace CalculatorApp
                     AddResult(eq);
                     // 3. Ожидание...
                     Thread.Sleep(SecLock * 1000);
-                    // ...и вывод результата.
-                    /*QueueResults.TryDequeue(out Equation equation);
-                    AddLineToJournal(expression, equation);*/
+                    // ...и вывод результата методом ShowResult
+
                 }
             }
             public void ShowResult()
