@@ -16,13 +16,13 @@ namespace CalculatorApp
             private readonly Form1 form;
             private int SecLock { get; set; }
             private readonly ConcurrentQueue<Expression> QueueRequests;
-            private readonly ConcurrentQueue<double> QueueResults;
+            private readonly ConcurrentQueue<Equation> QueueResults;
 
             public CalcManager(Form1 form)
             {
                 this.form = form;
                 QueueRequests = new ConcurrentQueue<Expression>();
-                QueueResults = new ConcurrentQueue<double>();
+                QueueResults = new ConcurrentQueue<Equation>();
                 UpdateSecLock();
             }
 
@@ -56,9 +56,9 @@ namespace CalculatorApp
                 QueueRequests.Enqueue(expression);
                 UpdateRequestCount();
             }
-            public void AddResult(double result)
+            public void AddResult(Equation eq)
             {
-                QueueResults.Enqueue(result);
+                QueueResults.Enqueue(eq);
                 UpdateResultCount();
             }
             public void AddLineToJournal(Expression exp, double res)
@@ -102,14 +102,16 @@ namespace CalculatorApp
                     });
                     UpdateRequestCount();
                     // 2. Извлеченный элемент отправляется на обработку.
-                    AddResult(expression.calculate());
+                    Equation eq = new Equation { expression = expression, result = expression.calculate() };
+                    AddResult(eq);
                     // 3. Ожидание...
                     Thread.Sleep(SecLock * 1000);
                     // ...и вывод результата.
-                    QueueResults.TryDequeue(out double result);
-                    AddLineToJournal(expression, result);
+                    /*QueueResults.TryDequeue(out Equation equation);
+                    AddLineToJournal(expression, equation);*/
                 }
             }
+
             public void ThreadCalculation(ref bool cancel)
             {
                 while (!cancel && QueueRequests.Count > 0)
@@ -142,6 +144,12 @@ namespace CalculatorApp
                 });
             }
 
+        }
+
+        struct Equation
+        {
+            public Expression expression;
+            public double result;
         }
     }
     
