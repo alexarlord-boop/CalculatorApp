@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/CalculatorTests/CalculatorTests.csproj
+/CalculatorTests/CalculatorTests.cs
+/CalculatorTests/Properties
+/CalculatorTests

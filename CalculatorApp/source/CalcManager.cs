@@ -11,7 +11,7 @@ namespace CalculatorApp
 {
     public partial class Form1 : Form
     {
-        private class CalcManager
+        public class CalcManager
         {
             private readonly Form1 form;
             private int SecLock { get; set; }
@@ -151,7 +151,7 @@ namespace CalculatorApp
 
         }
 
-        struct Equation
+        public struct Equation
         {
             public Expression expression;
             public double result;
