@@ -124,6 +124,7 @@ namespace CalculatorApp
                     try
                     {
                         Calculation();
+                        ShowResult();
                     }
                     catch (Exception ex)
                     {
