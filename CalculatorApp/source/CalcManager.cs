@@ -116,6 +116,7 @@ namespace CalculatorApp
                 // ...и вывод результата.
                 QueueResults.TryDequeue(out Equation equation);
                 AddLineToJournal(equation);
+                UpdateResultCount();
             }
             public void ThreadCalculation(ref bool cancel)
             {
@@ -135,7 +136,6 @@ namespace CalculatorApp
                     }
                 }
 
-                UpdateResultCount();
                 Terminate("Requests queue is empty");
                 cancel = true;
             }
