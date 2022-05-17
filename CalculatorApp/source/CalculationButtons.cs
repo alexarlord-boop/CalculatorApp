@@ -58,17 +58,17 @@ namespace CalculatorApp
         }
 
 
-        private void SymbolSafeInsertion(char operation)
+        private void SymbolSafeInsertion(char symbol)
         {
             if (!inputTextBox.Text.Equals(""))
             {
                 if (symbolAtTheEnd)
                 {
-                    inputTextBox.Text = inputTextBox.Text.Substring(0, inputTextBox.Text.Length - 1) + operation;
+                    inputTextBox.Text = inputTextBox.Text.Substring(0, inputTextBox.Text.Length - 1) + symbol;
                 }
                 else
                 {
-                    inputTextBox.Text += operation;
+                    inputTextBox.Text += symbol;
                     symbolAtTheEnd = true;
                 }
             }
