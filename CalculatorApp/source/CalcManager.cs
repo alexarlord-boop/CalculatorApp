@@ -92,6 +92,7 @@ namespace CalculatorApp
             }
             public void Calculation()
             {
+                // 1. Берется следующий элемент (если он там есть)
                 bool gotRequest = QueueRequests.TryDequeue(out Expression expression);
                 if (gotRequest)
                 {
@@ -99,13 +100,13 @@ namespace CalculatorApp
                     {
                         form.messageLabel2.Text = expression.getCanonicalExpressionString();
                     });
-
                     UpdateRequestCount();
-
+                    // 2. Извлеченный элемент отправляется на обработку.
                     AddResult(expression.calculate());
+                    // 3. Ожидание...
                     Thread.Sleep(SecLock * 1000);
+                    // ...и вывод результата.
                     QueueResults.TryDequeue(out double result);
-
                     AddLineToJournal(expression, result);
                 }
             }
