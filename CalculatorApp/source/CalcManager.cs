@@ -61,10 +61,10 @@ namespace CalculatorApp
                 QueueResults.Enqueue(eq);
                 UpdateResultCount();
             }
-            public void AddLineToJournal(Expression exp, double res)
+            public void AddLineToJournal(Equation equation)
             {
-                StringBuilder sb = new StringBuilder(exp.getCanonicalExpressionString());
-                sb.Append(" = ").Append(res.ToString());
+                StringBuilder sb = new StringBuilder(equation.expression.getCanonicalExpressionString());
+                sb.Append(" = ").Append(equation.result.ToString());
 
                 form.Invoke((MethodInvoker)delegate
                 {
