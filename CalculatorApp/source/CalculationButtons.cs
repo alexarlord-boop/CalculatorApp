@@ -117,6 +117,5 @@ namespace CalculatorApp
                 messageLabel.Text = "";
             }
         }
-
     }
 }

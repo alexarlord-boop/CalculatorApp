@@ -18,7 +18,6 @@ namespace CalculatorApp
             private readonly ConcurrentQueue<Expression> QueueRequests;
             private readonly ConcurrentQueue<double> QueueResults;
 
-
             public CalcManager(Form1 form)
             {
                 this.form = form;

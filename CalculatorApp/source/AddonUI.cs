@@ -46,6 +46,5 @@ namespace CalculatorApp
             cancel = true;
             manager.Terminate("Thread stopped");
         }
-        
     }
 }
