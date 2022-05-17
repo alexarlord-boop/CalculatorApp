@@ -52,6 +52,9 @@
     <Compile Include="AddonUI.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CalcManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CalculationButtons.cs">
       <SubType>Form</SubType>
     </Compile>
