@@ -115,7 +115,7 @@ namespace CalculatorApp
             {
                 // ...и вывод результата.
                 QueueResults.TryDequeue(out Equation equation);
-                AddLineToJournal(expression, equation);
+                AddLineToJournal(equation);
             }
             public void ThreadCalculation(ref bool cancel)
             {
