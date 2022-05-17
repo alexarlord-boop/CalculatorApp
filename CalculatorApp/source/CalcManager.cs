@@ -56,9 +56,9 @@ namespace CalculatorApp
                 QueueRequests.Enqueue(expression);
                 UpdateRequestCount();
             }
-            public void AddResult(double equation)
+            public void AddResult(double result)
             {
-                QueueResults.Enqueue(equation);
+                QueueResults.Enqueue(result);
                 UpdateResultCount();
             }
             public void AddLineToJournal(Expression exp, double res)
