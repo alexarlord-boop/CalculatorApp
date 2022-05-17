@@ -17,7 +17,6 @@ namespace CalculatorApp
         private bool cancel = false;
         private bool symbolAtTheEnd = false;
 
-
         public Form1()
         {
             InitializeComponent();
