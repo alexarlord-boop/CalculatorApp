@@ -11,6 +11,11 @@ namespace CalculatorApp
         {
             manager.UpdateSecLock();
         }
+        private void ClearJournalBtn_Click(object sender, EventArgs e)
+        {
+            journalView.Items.Clear();
+            messageLabel2.Text = "";
+        }
         private void StartBtn_Click(object sender, EventArgs e)
         {
             cancel = false;
@@ -41,11 +46,6 @@ namespace CalculatorApp
             cancel = true;
             manager.Terminate("Thread stopped");
         }
-        private void ClearJournalBtn_Click(object sender, EventArgs e)
-        {
-            journalView.Items.Clear();
-            messageLabel2.Text = "";
-        }
-
+        
     }
 }
